@@ -1,0 +1,55 @@
+<div class="container mt-3">
+        <h2>Login</h2>
+    <form [formGroup]="form"(ngSubmit)="guardar()">
+        @if(correcto){
+            <div class="alert alert-danger" role="alert">
+                USUARIO NO REGISTRADO O CONTRASEÑA INCORRECTA
+              </div>
+        }
+        <div class="row mt-3">
+             <div class="col-1">
+                <label for="emailId">Email</label>
+             </div>
+             <div class="col-5">
+                <input class="form-control" type="email" placeholder="email" id="emailId" 
+                name="email"  [ngClass]="{'is-invalid':getInvalid('email')}" [(ngModel)]="usuario.email"   formControlName="email">
+                @if(getInvalid("email"))
+                {
+                    <p class="text-danger">Email invalido</p>
+                } 
+             </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-1">
+               <label for="userId">User</label>
+            </div>
+            <div class="col-5">
+               <input class="form-control" type="text" placeholder="user" id="userId" 
+               name="nombre"  [ngClass]="{'is-invalid':getInvalid('user')}" [(ngModel)]="usuario.nombre" formControlName="nombre">
+               @if(getInvalid("nombre"))
+                {
+                    <p class="text-danger">Nombre invalido</p>
+                } 
+            </div>
+       </div>
+       <div class="row mt-3">
+        <div class="col-1">
+           <label for="userId">User</label>
+        </div>
+        <div class="col-5">
+           <input class="form-control" type="password" placeholder="password" id="passwordId" 
+           name="password"  [ngClass]="{'is-invalid':getInvalid('password')}"  [(ngModel)]="usuario.password" formControlName="password">
+                        @if(getInvalid("password")){
+                            <p class="text-danger">Password invalido</p>
+                        } 
+        </div>
+        <div class="row mt-3 text-center">
+            <div class="col-1">
+            </div>
+            <div class="col-5">
+                <button type="submit" class="btn btn-outline-primary">Ingresar</button>
+            </div>
+        </div>
+   </div>
+    </form>
+</div>

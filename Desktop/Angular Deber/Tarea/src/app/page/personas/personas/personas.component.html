@@ -1,0 +1,20 @@
+<app-modalpersonas (Emmiter)="guardar($event)"></app-modalpersonas>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Identificacion</th>
+        <th scope="col">Nombres</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Email</th>
+        <th scope="col">Celular</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let persona of personas">
+        <td> {{ persona.id }} </td>
+        <td> {{ persona.nombres }} </td>
+        <td> {{ persona.edad }} </td>
+        <td> {{ persona.email }} </td> 
+        <td> {{ persona.celular }} </td> 
+    </tbody>
+  </table>
